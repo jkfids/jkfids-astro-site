@@ -28,6 +28,9 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
 <Layout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
   <Container>
     <aside data-pagefind-ignore>
+      <h1 class="animate text-black dark:text-white text-4xl mb-12">
+        {BLOG.TITLE}
+      </h1>
       <div class="space-y-10">
         <div class="space-y-4">
           {

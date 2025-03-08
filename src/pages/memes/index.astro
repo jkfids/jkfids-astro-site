@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import { MEMES } from "@consts";
+import { CV } from "@consts";
+import CVCard from "@components/CVCard.astro";
+
+// TO Modify
+const works = [
+  {company:"Company A", time: "2022-Present", job_title: "Research Scientist", location: "London, UK", description: "Your Notes about the job"},
+  {company:"Company A", time: "2022-Present", job_title: "Research Scientist", location: "London, UK", description: "Your Notes about the job"},
+]
+const educations = [
+  {school:"University 1", time: "2022-Present", job_title: "BEng in Electronic Information Engineering", location: "London, UK", description: "Your Notes about the study"},
+]
+---
+
+<!-- <Layout title={MEMES.TITLE} description={MEMES.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <h1 class="animate text-4xl font-semibold text-black dark:text-white">
+        Memes
+      </h1>
+      <div class="animate not-prose flex flex-col gap-4">
+        <img src="/path/to/meme1.jpg" alt="Meme 1" />
+        <img src="/path/to/meme2.jpg" alt="Meme 2" />
+      </div>
+    </div>
+  </Container>
+</Layout> -->
+
+<Layout title={MEMES.TITLE} description={MEMES.DESCRIPTION}>
+    <Container>
+      <aside data-pagefind-ignore>
+        <h1 class="animate text-black dark:text-white text-4xl mb-12">
+          {MEMES.TITLE}
+        </h1>
+        <div class="space-y-10">
+          <!-- <div class="animate font-semibold text-black dark:text-white">
+            Memes
+          </div> -->
+        </div>
+      </aside>
+    </Container>
+  </Layout>

@@ -24,8 +24,8 @@ const publications: CollectionEntry<"publications">[] = (
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <aside data-pagefind-ignore>
-      <h1 class="animate font-semibold text-black dark:text-white">
-        Astro Micro Academics 🍄
+      <h1 class="animate text-black dark:text-white text-4xl">
+        <strong>John</strong> Fidel Kam
       </h1>
       <div class="space-y-16">
         <section>
@@ -58,6 +58,7 @@ const publications: CollectionEntry<"publications">[] = (
                 Styled with TailwindCSS and preconfigured with system, light,
                 and dark themes.
               </p>
+
               <p>
                 Visit
                 <Link href="https://github.com/jingwu2121/astro-micro-academic">
@@ -66,15 +67,20 @@ const publications: CollectionEntry<"publications">[] = (
                 to fork the repository to get started.
               </p>
             </span>
+            <span class="animate">
+              <p>
+                Research Interests: 
+              </p>
+            </span>
             
           </article>
         </section>
 
-        <section class="animate space-y-2 border-2 border-red-800 text-red-800 dark:border-red-400 border-dashed p-2 dark:text-red-400">
+        <!-- <section class="animate space-y-2 border-2 border-red-800 text-red-800 dark:border-red-400 border-dashed p-2 dark:text-red-400">
           📢📢 Your important Information (Open for job/Recruiting students)
-        </section>
+        </section> -->
 
-        <section class="animate space-y-6">
+        <!-- <section class="animate space-y-6">
           <span class="animate">
             <h4 class="font-semibold text-black dark:text-white">
               Let's Connect
@@ -87,9 +93,9 @@ const publications: CollectionEntry<"publications">[] = (
             </article>
             <SocialIcons icon_size={'text-3xl'} />
           </span>
-        </section>
+        </section> -->
 
-        <section class="animate space-y-6">
+        <!-- <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-black dark:text-white">
               Research Interests
@@ -99,12 +105,12 @@ const publications: CollectionEntry<"publications">[] = (
             <li>3D Vision</li>
             <li>AIGC</li>
           </ul>
-        </section>
+        </section> -->
         
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-black dark:text-white">
-              News
+              Latest
             </h2>
           </div>
           <ul class="not-prose flex flex-col gap-4 overflow-y-auto max-h-[150px] scroll_bar">
@@ -119,15 +125,15 @@ const publications: CollectionEntry<"publications">[] = (
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-black dark:text-white">
-              Recent research
+              Selected posts
             </h2>
-            <Link href="/publications"> See all research </Link>
+            <Link href="/blog"> See all posts </Link>
           </div>
           <ul class="not-prose flex flex-col gap-4">
             {
-              publications.map((publication) => (
+              blog.map((post) => (
                 <li>
-                  <PublicationCard entry={publication} />
+                  <ArrowCard entry={post} />
                 </li>
               ))
             }
@@ -137,15 +143,15 @@ const publications: CollectionEntry<"publications">[] = (
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-black dark:text-white">
-              Latest posts
+              Selected research
             </h2>
-            <Link href="/blog"> See all posts </Link>
+            <Link href="/publications"> See all research </Link>
           </div>
           <ul class="not-prose flex flex-col gap-4">
             {
-              blog.map((post) => (
+              publications.map((publication) => (
                 <li>
-                  <ArrowCard entry={post} />
+                  <PublicationCard entry={publication} />
                 </li>
               ))
             }

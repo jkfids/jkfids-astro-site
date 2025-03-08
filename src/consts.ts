@@ -33,14 +33,26 @@ export const CV: Metadata = {
     "your cv",
 };
 
-export const TAGS: Metadata = {
-  TITLE: "TAGS",
+// export const TAGS: Metadata = {
+//   TITLE: "TAGS",
+//   DESCRIPTION:
+//     "blog tag filter",
+// };
+
+// export const ABOUT: Metadata = {
+//   TITLE: "About",
+//   DESCRIPTION:
+//     "A self-intro",
+// };
+
+export const REPOSITORIES: Metadata = {
+  TITLE: "Repositories",
   DESCRIPTION:
-    "blog tag filter",
+    "Repositories",
 };
 
-export const ABOUT: Metadata = {
-  TITLE: "ABOUT",
+export const MEMES: Metadata = {
+  TITLE: "Memes",
   DESCRIPTION:
-    "A self-intro",
+    "Memes",
 };
