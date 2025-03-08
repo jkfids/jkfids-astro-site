@@ -10,15 +10,15 @@ import PublicationCard from "@components/PublicationCard.astro";
 import SocialIcons from "@components/SocialIcons.astro";
 
 const blog = (await getCollection("blog"))
-  .filter((post) => !post.data.draft)
+  .filter((blog) => blog.data.featured)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
 const publications: CollectionEntry<"publications">[] = (
   await getCollection("publications")
 )
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_PUBLICATIONS_ON_HOMEPAGE);
+  .filter((publication) => publication.data.featured)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -67,11 +67,13 @@ const publications: CollectionEntry<"publications">[] = (
                 to fork the repository to get started.
               </p>
             </span>
-            <span class="animate">
-              <p>
-                Research Interests: 
-              </p>
-            </span>
+              <span class="animate">
+                <p>
+                  <span class="font-semibold text-black dark:text-white">Research Interests: </span>
+                  Quantum error correction, tensor networks, non-Markovianity, quantum software development
+                </p>
+              </span> 
+            
             
           </article>
         </section>

@@ -9,7 +9,7 @@ export const SITE: Site = {
   SITEURL: 'https://astro-micro-academic.vercel.app' // Update here to link the RSS icon to your website rss
 };
 
-export const HIGHLIGHTAUTHOR = "John B"
+export const HIGHLIGHTAUTHOR = "John F. Kam"
 
 export const HOME: Metadata = {
   TITLE: "Home",

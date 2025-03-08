@@ -3,6 +3,7 @@ title: "[Tutorial] Getting started with Astro-Micro-Academics"
 description: "Hit the ground running."
 date: "2024-07-26"
 tags: ['guide', 'tutorial']
+featured: false
 ---
 
 :exclamation: Also refer to [Old] posts to see examples and changes. Some changes are removed in this version, which are marked. 

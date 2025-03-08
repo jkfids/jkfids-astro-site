@@ -22,10 +22,10 @@ const decomposeURL = (URL: string | undefined) => {
   return { text: parts[0], url: parts[1] };
 };
 
-const dataLink = decomposeURL(entry.data.dataURL);
-const paperLink = decomposeURL(entry.data.paperURL);
+const arxivLink = decomposeURL(entry.data.arxivURL);
+const doiLink = decomposeURL(entry.data.doiURL);
 const codeLink = decomposeURL(entry.data.codeURL);
-const webLink = decomposeURL(entry.data.webURL);
+const dataLink = decomposeURL(entry.data.dataURL);
 const authorsParts = splitStr(entry.data.authors, HIGHLIGHTAUTHOR);
 
 ---
@@ -38,7 +38,7 @@ const authorsParts = splitStr(entry.data.authors, HIGHLIGHTAUTHOR);
   alt={entry.data.imgAlt ?? ''}
   width={640}
   height={480}
-  class="sm:w-[240px] sm:h-[135px] shadow-sm rounded-md sm:mr-6 hover:opacity-80 transition hidden md:flex"
+  class="sm:w-[240px] sm:h-[135px] shadow-sm rounded-md sm:mr-6 hover:opacity-80 transition hidden md:flex object-cover"
   loading="eager"
   />
 
@@ -55,18 +55,31 @@ const authorsParts = splitStr(entry.data.authors, HIGHLIGHTAUTHOR);
           )}
         </div>
         <div class="text-sm w-full">
-          {paperLink.url!="" && <a class="underline hover:text-cyan-500 text-orange-500 dark:hover:text-cyan-500 transition-colors duration-300 ease-in-out visited:text-indigo-400" target="_blank" href={paperLink.url}>{paperLink.text}</a>}
+          {arxivLink.url!="" && <a class="underline hover:text-cyan-500 text-orange-500 dark:hover:text-cyan-500 transition-colors duration-300 ease-in-out visited:text-indigo-400" target="_blank" href={arxivLink.url}>{arxivLink.text}</a>}
+          {doiLink.url!="" && <a class="underline hover:text-cyan-500 text-orange-500 dark:hover:text-cyan-500 transition-colors duration-300 ease-in-out visited:text-indigo-400" target="_blank" href={doiLink.url}>{doiLink.text}</a>}
           {codeLink.url!="" && <a class="underline hover:text-cyan-500 text-orange-500 dark:hover:text-cyan-500 transition-colors duration-300 ease-in-out visited:text-indigo-400" target="_blank" href={codeLink.url}>{codeLink.text}</a>}
-          {webLink.url!="" && <a class="underline hover:text-cyan-500 text-orange-500 dark:hover:text-cyan-500 transition-colors duration-300 ease-in-out visited:text-indigo-400" target="_blank" href={webLink.url}>{webLink.text}</a>}
           {dataLink.url!="" && <a class="underline hover:text-cyan-500 text-orange-500 dark:hover:text-cyan-500 transition-colors duration-300 ease-in-out visited:text-indigo-400" target="_blank" href={dataLink.url}>{dataLink.text}</a>}
         </div>
         <div class="text-sm">
-          In <div class="inline italic">{entry.data.pub}</div>
+          {entry.data.pub === "Preprint" ? (
+            <div><span class ="italic">Preprint,</span> {entry.data.date && `${new Date(entry.data.date).toLocaleString('en-US', { month: 'long', year: 'numeric' })}.`}</div>
+          ) : (
+            entry.data.pub && (
+              <div>
+                In <span class="italic">{entry.data.pub}</span>, {entry.data.date && `${new Date(entry.data.date).toLocaleString('en-US', { month: 'long', year: 'numeric' })}.`}
+              </div>
+            )
+          )}
         </div>
-      </div>
-      <p class="text-sm mt-2 break-words">
+      <details class="mt-1">
+        <summary class="text-sm cursor-pointer font-semibold">Abstract</summary>
+        <p class="text-sm mt-1 break-words">
+          {entry.data.description}
+        </p>
+      </details>
+      <!-- <p class="text-sm mt-2 break-words">
         {entry.data.description}
-      </p>
+      </p> -->
     </div>
   </div>
 </div>
