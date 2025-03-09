@@ -29,52 +29,65 @@ const publications: CollectionEntry<"publications">[] = (
       </h1>
       <div class="space-y-16">
         <section>
-          <article class="space-y-4">
-            <span class="animate">
-              <p>
-                Astro Micro Academics is a theme for <Link
-                  href="https://astro.build/">Astro</Link
-                > and tailored for academic users and researchers. It's built on <Link href="https://astro.build/themes/details/astro-micro/">Astro Micro</Link> and
-                <Link href="https://github.com/markhorn-dev">
-                  Mark Horn's
-                </Link> popular theme <Link
-                  href="https://astro.build/themes/details/astronano/"
-                  >Astro Nano</Link
-                >. 
-              </p>
-              <p>
-                Micro Academics adds features like <span class="text-red-500">tags, and blog math support</span> and also inherits <Link href="https://pagefind.app/"
-                  >Pagefind</Link
-                > for search, <Link href="https://giscus.app">Giscus</Link> for comments,
-                from Astro Micro. See full changes this <Link
-                  href="/blog/00-academic-astro">here</Link
-                >.
-              </p>
-            </span>
-            <span class="animate">
-              <p>
-                Micro Academics still comes with everything great about Micro and Nano — full type
-                safety, a sitemap, an RSS feed, and Markdown + MDX support.
-                Styled with TailwindCSS and preconfigured with system, light,
-                and dark themes.
-              </p>
-
-              <p>
-                Visit
-                <Link href="https://github.com/jingwu2121/astro-micro-academic">
-                  Astro Micro Academics on GitHub
-                </Link>
-                to fork the repository to get started.
-              </p>
-            </span>
+          <article class="flex flex-col md:flex-row items-start">
+            <div class="space-y-4 flex-1">
               <span class="animate">
                 <p>
-                  <span class="font-semibold text-black dark:text-white">Research Interests: </span>
-                  Quantum error correction, tensor networks, non-Markovianity, quantum software development
+                  Astro Micro Academics is a theme for <Link
+                    href="https://astro.build/">Astro</Link
+                  > and tailored for academic users and researchers. It's built on <Link href="https://astro.build/themes/details/astro-micro/">Astro Micro</Link> and
+                  <Link href="https://github.com/markhorn-dev">
+                    Mark Horn's
+                  </Link> popular theme <Link
+                    href="https://astro.build/themes/details/astronano/"
+                    >Astro Nano</Link
+                  >. 
                 </p>
-              </span> 
-            
-            
+                <p>
+                  Micro Academics adds features like <span class="text-red-500">tags, and blog math support</span> and also inherits <Link href="https://pagefind.app/"
+                    >Pagefind</Link
+                  > for search, <Link href="https://giscus.app">Giscus</Link> for comments,
+                  from Astro Micro. See full changes this <Link
+                    href="/blog/00-academic-astro">here</Link
+                  >.
+                </p>
+              </span>
+              <span class="animate">
+                <p>
+                  Micro Academics still comes with everything great about Micro and Nano — full type
+                  safety, a sitemap, an RSS feed, and Markdown + MDX support.
+                  Styled with TailwindCSS and preconfigured with system, light,
+                  and dark themes.
+                </p>
+
+                <p>
+                  Visit
+                  <Link href="https://github.com/jingwu2121/astro-micro-academic">
+                    Astro Micro Academics on GitHub
+                  </Link>
+                  to fork the repository to get started.
+                </p>
+              </span>
+                <span class="animate">
+                  <p>
+                    <span class="font-semibold text-black dark:text-white">Research Interests: </span>
+                    Quantum error correction, tensor networks, non-Markovianity, quantum software development
+                  </p>
+                </span> 
+            </div>
+
+            <!-- Image container -->
+            <div class="mt-4 md:mt-6 md:ml-4">
+              <figure class="m-0 p-0">
+                <img src="/public/rupert-cat.gif" alt="/path/to/file.png" class="w-60 h-auto object-cover" />
+                  <figcaption class="text-base text-center font-mono text-black dark:text-white">
+                    john.kam@monash.edu
+                  </figcaption>
+                  <div class="flex justify-center mt-2">
+                    <SocialIcons icon_size={'text-2xl'} />
+                  </div>
+              </figure>
+            </div>
           </article>
         </section>
 
@@ -116,10 +129,10 @@ const publications: CollectionEntry<"publications">[] = (
             </h2>
           </div>
           <ul class="not-prose flex flex-col gap-4 overflow-y-auto max-h-[150px] scroll_bar">
-            <li>[06/2024]: Your News1</li>
-            <li>[06/2024]: Your <span class="text-red-600">News2</span></li>
-            <li>[06/2024]: Your <span class="text-red-600">News2</span></li>
+            <li>[03/2025]: <span class='italic'>Detrimental non-Markovian errors for surface code memory</span> published in IOP Quantum Science and Technology.</li>
+            <li>[05/2023]: Joined Monash University for a PhD, advised by <Link href=https://scholar.google.com/citations?user=96Uzen0AAAAJ&h external>Kavan Modi</Link> and <Link href=https://www.quantumelectronics.org/pi external>Muhammad Usman</Link>, to tackle the issue of correlated (especially non-Markovian) noise in quantum error correction.</li>
             <!-- <li>[06/2024]: Your <span class="text-red-600">News2</span></li>
+            <li>[06/2024]: Your <span class="text-red-600">News2</span></li>
             <li>[06/2024]: Your <span class="text-red-600">News2</span></li> -->
           </ul>
         </section>

@@ -1,9 +1,9 @@
 import type { Metadata, Site } from "@types";
 
 export const SITE: Site = {
-  TITLE: "Astro Micro Academics",
+  TITLE: "John Fidel Kam",
   DESCRIPTION: "Astro Micro Academics is for academic user.",
-  EMAIL: "youremial@gmail.com",
+  EMAIL: "jfidelkam@gmail.com",
   NUM_POSTS_ON_HOMEPAGE: 2,
   NUM_PUBLICATIONS_ON_HOMEPAGE: 3,
   SITEURL: 'https://astro-micro-academic.vercel.app' // Update here to link the RSS icon to your website rss
@@ -17,7 +17,7 @@ export const HOME: Metadata = {
 };
 
 export const BLOG: Metadata = {
-  TITLE: "Blog",
+  TITLE: "Posts",
   DESCRIPTION: "A collection of articles on topics I am passionate about.",
 };
 
