@@ -123,3 +123,7 @@ pre {
 .copy-code:active {
   @apply scale-90 transition-transform;
 }
+
+.active {
+  @apply text-cyan-500 dark:text-orange-500;
+}

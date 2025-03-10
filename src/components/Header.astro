@@ -11,10 +11,10 @@ const isHomePage = Astro.url.pathname === "/";
 <header>
   <Container>
     <div class="flex flex-wrap justify-between gap-y-2">
-      { !isHomePage && (
+      { Astro.url.pathname !== "/" && (
         <div class="flex items-center gap-2">
           <Link href="/" underline={false}>
-            <div class="font-semibold">
+            <div class="font-semiboldzz">
               {SITE.TITLE}&nbsp;
             </div>
           </Link>
