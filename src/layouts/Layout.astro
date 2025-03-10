@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
     <link rel="stylesheet" href="/path/to/your/global.css">
   </head>
   <body>
-    <Header />
+    <Header currentPath={Astro.url.pathname} />
     <!-- <ProgressBar /> -->
     <main>
       <slot />
