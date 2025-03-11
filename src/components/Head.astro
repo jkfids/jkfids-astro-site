@@ -187,14 +187,16 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
   }
 
   function preloadTheme() {
-    const userTheme = localStorage.theme;
+  const userTheme = localStorage.getItem("theme");
 
-    if (userTheme === "light" || userTheme === "dark") {
-      toggleTheme(true); // set default to dark theme
-    } else {
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
-    }
+  if (userTheme === "light") {
+    toggleTheme(false); // set to light theme
+  } else if (userTheme === "dark") {
+    toggleTheme(true); // set to dark theme
+  } else {
+    toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
   }
+}
 
   function addCopyCodeButtons() {
     let copyButtonLabel = "📋";
