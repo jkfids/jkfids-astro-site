@@ -33,11 +33,11 @@ export const CV: Metadata = {
     "your cv",
 };
 
-// export const TAGS: Metadata = {
-//   TITLE: "TAGS",
-//   DESCRIPTION:
-//     "blog tag filter",
-// };
+export const TAGS: Metadata = {
+  TITLE: "TAGS",
+  DESCRIPTION:
+    "blog tag filter",
+};
 
 // export const ABOUT: Metadata = {
 //   TITLE: "About",
