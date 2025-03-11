@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 teaser.pptx
 ~$teaser.pptx
+
+# Old files from template repository
+old/

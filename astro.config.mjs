@@ -10,10 +10,13 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import pagefind from "astro-pagefind";
 
+import vercel from "@astrojs/vercel";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://astro-micro-academic.vercel.app",
   integrations: [tailwind(), sitemap(), mdx(), pagefind()],
+
   markdown: {
     shikiConfig: {
       theme: "css-variables",
@@ -21,5 +24,7 @@ export default defineConfig({
     rehypePlugins: [rehypeHeadingIds, rehypeAccessibleEmojis, rehypeKatex],
     remarkPlugins: [remarkToc, remarkMath, remarkEmoji],
   },
-  server: { port: 1234, host: true}
+
+  server: { port: 1234, host: true},
+  adapter: vercel()
 });

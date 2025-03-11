@@ -125,5 +125,5 @@ pre {
 }
 
 .active {
-  @apply text-cyan-500 dark:text-orange-500;
+  @apply text-blue-500 dark:text-orange-500;
 }
