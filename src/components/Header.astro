@@ -4,13 +4,11 @@ import Link from "@components/Link.astro";
 import SocialIcons from "./SocialIcons.astro";
 import { SITE } from "@consts";
 import ProgressBar from "./ProgressBar.astro";
-
-const isHomePage = Astro.url.pathname === "/";
 ---
 
 <header>
   <Container>
-    <div class="flex flex-wrap justify-between gap-y-2">
+    <div class="flex flex-wrap justify-center gap-y-2">
       { Astro.url.pathname !== "/" && (
         <div class="flex items-center gap-2">
           <Link href="/" underline={false}>
