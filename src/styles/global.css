@@ -25,7 +25,7 @@ body {
 }
 
 header {
-  @apply fixed left-0 right-0 top-0 z-50 py-6;
+  @apply fixed left-0 right-0 top-0 z-50 py-3 md:py-6;
   @apply bg-neutral-200/75 dark:bg-neutral-900/75;
   @apply saturate-200 backdrop-blur-sm;
 }
