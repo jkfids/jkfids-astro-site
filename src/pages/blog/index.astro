@@ -9,6 +9,9 @@ const data = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
+const featuredPosts = data.filter((post) => post.data.featured);
+const nonFeaturedPosts = data.filter((post) => !post.data.featured);
+
 type Acc = {
   [year: string]: CollectionEntry<"blog">[];
 };
@@ -31,27 +34,41 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
       <h1 class="animate text-black dark:text-white text-4xl mb-12">
         {BLOG.TITLE}
       </h1>
+
+      {/* Featured Section */}
+      {featuredPosts.length > 0 && (
+        <section class="animate space-y-4 mb-10">
+          <h2 class="font-semibold text-black dark:text-white">
+            Featured
+          </h2>
+          <ul class="not-prose flex flex-col gap-4">
+            {featuredPosts.map((post) => (
+              <li>
+                <ArrowCard entry={post} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Main Blog List */}
       <div class="space-y-10">
-        <div class="space-y-4">
-          {
-            years.map((year) => (
-              <section class="animate space-y-4">
-                <div class="font-semibold text-black dark:text-white">
-                  {year}
-                </div>
-                <div>
-                  <ul class="not-prose flex flex-col gap-4">
-                    {posts[year].map((post) => (
-                      <li>
-                        <ArrowCard entry={post} />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </section>
-            ))
-          }
-        </div>
+        {years.map((year) => (
+          <section class="animate space-y-4">
+            <h2 class="font-semibold text-black dark:text-white">
+              {year}
+            </h2>
+            <div>
+              <ul class="not-prose flex flex-col gap-4">
+                {posts[year].map((post) => (
+                  <li>
+                    <ArrowCard entry={post} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        ))}
       </div>
     </aside>
   </Container>
