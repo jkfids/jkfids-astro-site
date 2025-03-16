@@ -30,4 +30,15 @@ const publications = defineCollection({
   }),
 });
 
-export const collections = { blog, publications };
+const memes = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    credit: z.string().optional(),
+    img: z.string().optional(),
+    imgAlt: z.string().optional(),
+  }),
+});
+
+export const collections = { blog, publications, memes }; 

@@ -54,5 +54,5 @@ export const REPOSITORIES: Metadata = {
 export const MEMES: Metadata = {
   TITLE: "Memes",
   DESCRIPTION:
-    "Memes",
+    "Specialty curated memes. Homebrewed unless credited otherwise.",
 };

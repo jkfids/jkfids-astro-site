@@ -1,0 +1,32 @@
+---
+type Props = {
+  href: string;
+};
+
+const { href } = Astro.props;
+---
+
+<a
+  href={href}
+  class="not-prose group relative flex w-fit flex-nowrap rounded-xl border border-black/15 py-1.5 pl-7 pr-3 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    class="absolute left-2 top-1/2 size-4 -translate-y-1/2 fill-none stroke-current stroke-2"
+  >
+    <!-- Speech bubble shape -->
+    <path
+      d="M4 4h16c1.104 0 2 0.896 2 2v12c0 1.104-0.896 2-2 2H6l-2 2v-2H4c-1.104 0-2-0.896-2-2V6c0-1.104 0.896-2 2-2z"
+      class="transition-all duration-300 ease-in-out group-hover:fill-current group-hover:stroke-transparent group-focus-visible:fill-current group-focus-visible:stroke-transparent"
+    />
+    <!-- Tail of the speech bubble -->
+    <polygon
+      points="12,16 10,18 14,18"
+      class="transition-all duration-300 ease-in-out group-hover:fill-current group-focus-visible:fill-current"
+    />
+  </svg>
+  <div class="text-sm">
+    <slot />
+  </div>
+</a>

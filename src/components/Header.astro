@@ -12,11 +12,11 @@ import ProgressBar from "./ProgressBar.astro";
       { Astro.url.pathname !== "/" && (
         <div class="flex items-center gap-2">
           <Link href="/" underline={false}>
-            <div class="font-semiboldzz">
+            <div class="font-semibold text-lg">
               {SITE.TITLE}&nbsp;
             </div>
           </Link>
-          <SocialIcons icon_size={'text-xl'} />
+          <SocialIcons icon_size={'text-lg'} />
         </div>
       )}
       <nav class="flex items-center gap-1 text-sm md:ml-auto">

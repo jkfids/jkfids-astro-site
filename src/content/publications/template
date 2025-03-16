@@ -7,7 +7,7 @@ arxivURL: "arxiv: https://https://arxiv.org/"
 doiURL: "doi: https://doi.org/"
 codeURL: "code: https://github.com/"
 dataURL: "Data: "
-img: "/pubimg/rupert-cat.gif"
+img: "/rupert-cat.gif"
 imgAlt: "Paper Teaser"
 pub: "Publisher"
 ---
