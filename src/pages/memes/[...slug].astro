@@ -2,16 +2,17 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
+import FormattedDate from "@components/FormattedDate.astro";
 import BackToPrevious from "@components/BackToPrevious.astro";
 import Giscus from "@components/Giscus.astro";
 import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
-	const memes = await getCollection("memes");
-	return memes.map((meme) => ({
-		params: { slug: meme.slug },
-		props: meme,
-	}));
+    const memes = await getCollection("memes");
+    return memes.map((meme) => ({
+        params: { slug: meme.slug },
+        props: meme,
+    }));
 }
 
 type Props = CollectionEntry<"memes">;
@@ -21,26 +22,29 @@ const { Content, headings } = await meme.render();
 ---
 
 <Layout title={meme.data.title} description="">
-	<Container>
-		<div class="animate">
-			<BackToPrevious href="/memes">Back to memes</BackToPrevious>
-		</div>
-		<div class="mt-4 mb-4 md:mt-12 md:mb-8">
-			<h1 class="animate text-xl md:text-2xl font-semibold text-black dark:text-white">
-				{meme.data.title}
-			</h1>
-		</div>
-		<article class="animate">
-			<img
-        src={meme.data.img}
-        alt={meme.data.imgAlt ?? meme.data.title}
-				width={1024}
-        class="rounded-lg shadow-md max-w-full h-auto"
-        loading="eager"
-      />
-			<div class="mt-4 md:mt-12">
-				<Giscus />
-			</div>
-		</article>
-	</Container>
+    <Container>
+        <div class="animate">
+            <BackToPrevious href="/memes">Back to memes</BackToPrevious>
+        </div>
+        <div class="mt-10 mb-4 space-y-4">
+            <div class="animate font-base text-sm">
+                <FormattedDate date={meme.data.date} />
+            </div>
+            <h1 class="animate text-xl md:text-2xl font-semibold text-black dark:text-white">
+                {meme.data.title}
+            </h1>
+        </div>
+        <article class="animate">
+            <img
+            src={meme.data.img}
+            alt={meme.data.imgAlt ?? meme.data.title}
+            width={1024}
+            class="rounded-lg shadow-md max-w-full h-auto"
+            loading="eager"
+            />
+            <div class="mt-12 md:mt-24">
+                <Giscus />
+            </div>
+        </article>
+    </Container>
 </Layout>

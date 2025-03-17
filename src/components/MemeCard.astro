@@ -2,7 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import Comments from "@components/Comments.astro";
-import BackToPrevious from "@components/BackToPrevious.astro";
+import FormattedDate from "@components/FormattedDate.astro";
 
 type Props = {
   entry: CollectionEntry<"memes">;
@@ -14,10 +14,14 @@ const { entry } = Astro.props as {
 
 ---
 
-<div class="group relative flex flex-col rounded-lg border border-black/15 p-3 md:p-4 transition-colors duration-300 ease-in-out hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/5">
+<div class="group relative flex flex-col rounded-lg border border-black/15 p-4 transition-colors duration-300 ease-in-out hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/5">
   <a href={`/${entry.collection}/${entry.slug}`} class="flex-1">
-    <h3 class="text-lg md:text-xl font-semibold mb-2 md:mb-4">
+    <h3 class="text-lg font-semibold mb-2 break-words">
       {entry.data.title}
+      &bull;
+      <span class="text-sm text-gray-500 dark:text-gray-400">
+        <FormattedDate date={entry.data.date} />
+      </span>
     </h3>
     <Image
       src={entry.data.img ?? ''}
@@ -28,7 +32,7 @@ const { entry } = Astro.props as {
       loading="eager"
     />
   </a>
-  <!-- <div class="mt-2 md:mt-4">
+  <div class="mt-2">
     <Comments href={`/${entry.collection}/${entry.slug}`}>Comments</Comments>
-  </div> -->
+  </div>
 </div>
